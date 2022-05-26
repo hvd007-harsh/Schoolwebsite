@@ -6,7 +6,7 @@ function App() {
   return (
   <Router>
   <Routes>
-    <Route exact path="/:page?" element={ <Header /> } >
+    <Route exact path="/:page?" render={(props)=> <Header {...props} /> } >
     </Route>
   </Routes>
   </Router>
