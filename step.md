@@ -24,4 +24,9 @@ for making the homepage
 4> rap the navlink and link on tabs for great effect and use the hover for multi effect
 5> We will use the html first then update the part with MUI and we will first make 
 6> We do not want anyone see data without rendering it so we will use data>data.js where we will update the data and implement all data like principle message college photo everything
+30/05/2022
+We solve the navigate problem and make route to every page from V6 react-router-dom
 
+06/06/2022
+
+We will make skeleton for student and student login and 
