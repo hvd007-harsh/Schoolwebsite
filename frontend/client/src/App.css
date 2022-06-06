@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,22 @@
   to {
     transform: rotate(360deg);
   }
+} */
+body{
+  min-height: 100vh;
+  min-width: 100vh;
+  box-sizing: border-box;
+}
+
+.navlink{
+  font-style: bolder;
+  color: #042a1b;
+}
+.removebar{
+  text-decoration: none;
+  color: #042a1b;
+}
+.imgPrinciple{
+  width: 200px;
+  height: 200px;
 }

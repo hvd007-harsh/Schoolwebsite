@@ -1,0 +1,27 @@
+day -28/05/2022 Saturday
+
+Template 
+what we make : 
+How we make:
+where we make :
+why we make :
+for what we make:
+
+day -28/05/2022 Saturday
+what we make :
+we are going to make our home page with banner and there principle message +
+we will correct the route rendering like we will make it faster and without lots of repetetions;
+
+Next I will make the principle message and important details I will put in it and update the 
+next Principle and the next data I will update and give the next volume 
+
+
+how we make:
+for making the homepage
+1> we will make Html for the given in div and use h1 and p 
+2> after drawing skeleton we will use img by using html and css
+3> then we make the route by using the navlink and link because it get active when it get tapped or click and that's what we want 
+4> rap the navlink and link on tabs for great effect and use the hover for multi effect
+5> We will use the html first then update the part with MUI and we will first make 
+6> We do not want anyone see data without rendering it so we will use data>data.js where we will update the data and implement all data like principle message college photo everything
+
