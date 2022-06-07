@@ -30,3 +30,12 @@ We solve the navigate problem and make route to every page from V6 react-router-
 06/06/2022
 
 We will make skeleton for student and student login and 
+
+07/06/2022
+
+I made backend of the website I created file and install node package manager in it and install express bodyparser express session cors(cross origin responsive server) 
+and initalize everything into the app 
+and made one model of student and teacher 
+then I made one route and intialize everything as per rule my next step is to made the student.js working as route 
+
+See u in evening session
