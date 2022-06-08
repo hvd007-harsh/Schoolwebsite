@@ -1,48 +1,65 @@
 import React,{useState} from 'react';
 import './StudentLogin.css';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 
 const StudentLogin = ()=>{
-       const [name,setName] = useState();
-       const [fatherName , setfatherName ] = useState();
-       const [rollNo , setrollNo] = useState();
-       const [course, setCourse]=  useState();
-       const [classroom , setClassrooom]= useState();
+       const [student,setStudent] = useState({
+           name:"",
+           fatherName:"",
+           rollNo:"",
+           course:"",
+           classroom:""
+       });
 
 
        const handleChange = (e)=>{  
-        setName(e.target.value);
-        setfatherName(e.target.value);
-        setrollNo(e.target.value);
-        setCourse(e.target.value);
-        setClassrooom(e.target.value);
+            const {name , value} = e.target;
+            setStudent({
+                ...student,
+                  [name]: value
+            })
        }
-       const Submit = () =>{
 
+
+
+       const Submit = () =>{
+           const {name , fatherName, rollNo ,course , classroom} = student;
+        if(name && fatherName && rollNo && course && classroom){
+            const data = { name , fatherName, rollNo, course, classroom};
+            axios.post('student/login',data).then((res)=>{
+                alert(res.message);
+            });
+        }else{
+            alert("Please enter the data");
        }
+       }
+
+
     return(
         <>
            <div className='container'>
         <form>
             <h2>STUDENT LOGIN</h2>
             <label>Name:</label>
-            <input className='input form-input' name='name' onChange={handleChange} value={name} id=''/><br/>
+            <input className='input form-input' name='name' onChange={handleChange} value={student.name} id=''/><br/>
             <label>Father Name:</label>
-            <input className='input form-input' name='fatherName' onChange={handleChange} value={fatherName} id=''/><br/>
+            <input className='input form-input' name='fatherName' onChange={handleChange} value={student.fatherName} id=''/><br/>
             
             <label>rollNo:</label>
-            <input className='input form-input' name='rollNo' onChange={handleChange} value={rollNo} id=''/><br/>
+            <input className='input form-input' name='rollNo' onChange={handleChange} value={student.rollNo} id=''/><br/>
             
             <label>course:</label>
-            <input className='input form-input' name='course' onChange={handleChange} value={course} id=''/><br/>
+            <input className='input form-input' name='course' onChange={handleChange} value={student.course} id=''/><br/>
             
             <label>Classroom:</label>
-            <input className='input form-input' name='classroom' onChange={handleChange} value={classroom} id=''/><br/>
+            <input className='input form-input' name='classroom' onChange={handleChange} value={student.classroom} id=''/><br/>
             <Button onClick={Submit} variant="outlined" color="error">Submit</Button>
             </form>   
            </div>
         </>
     )
 }
+
 
 export default StudentLogin;

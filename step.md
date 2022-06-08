@@ -39,3 +39,5 @@ and made one model of student and teacher
 then I made one route and intialize everything as per rule my next step is to made the student.js working as route 
 
 See u in evening session
+08/06/2022
+TodAY i WILL MADE TEACHER LOGIN AND REGISTER STUDENT FROM THERE 
