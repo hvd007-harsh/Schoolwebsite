@@ -41,3 +41,8 @@ then I made one route and intialize everything as per rule my next step is to ma
 See u in evening session
 08/06/2022
 TodAY i WILL MADE TEACHER LOGIN AND REGISTER STUDENT FROM THERE 
+09/06/2022 
+I make simple login for teacher UI and fix the axios error by making seperate base Uri next I am going to make teacher data save in mongodb and make them like they will submit the each and every student there classroom 
+and make a validator which will define it is email and password 
+
+see you in next portion

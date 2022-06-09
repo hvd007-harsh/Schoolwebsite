@@ -9,6 +9,7 @@ import About from "./Main/About";
 import Principle from "./Main/Principle";
 import Login from './Main/Login/Login';
 import StudentLogin from './Main/StudentLogin/Studentlogin';
+import Teacher from '../src/Main/TeacherLogin/Teacher';
 function App() {
   return (
 
@@ -20,6 +21,7 @@ function App() {
    <Route path="/principle" element={<Principle/> } />
    <Route path='/login' element={<Login/>} />
    <Route path='/login/student' element={<StudentLogin/>} />
+   <Route path='/login/teacher' element={<Teacher/>} />
    <Route  element={
      <h1 style={{color:"black", fontSize:"large" , align:"centre"}}>
        404 Enter a valid URL 

@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 import './StudentLogin.css';
 import Button from '@mui/material/Button';
-import axios from 'axios';
+import axiosinstance from '../../utilities/axios';
+
 
 const StudentLogin = ()=>{
        const [student,setStudent] = useState({
@@ -27,8 +28,8 @@ const StudentLogin = ()=>{
            const {name , fatherName, rollNo ,course , classroom} = student;
         if(name && fatherName && rollNo && course && classroom){
             const data = { name , fatherName, rollNo, course, classroom};
-            axios.post('student/login',data).then((res)=>{
-                alert(res.message);
+            axiosinstance.post('/student/login',data).then(res=>{
+               alert(res.data.message);
             });
         }else{
             alert("Please enter the data");

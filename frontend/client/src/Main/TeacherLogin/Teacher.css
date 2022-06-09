@@ -1,0 +1,14 @@
+.container{
+    padding: 5px;
+    justify-content: center;
+    white-space: pre;
+}
+.input{
+    padding: 5px;
+    margin: 5px;
+}
+
+.btn-submit{
+    color: aliceblue;
+    background-color: brown;
+}

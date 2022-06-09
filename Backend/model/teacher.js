@@ -7,10 +7,16 @@ const Schema =new mongoose.Schema({
         min: 6,
         max: 50
     },
-    JobId:{
+    email:{
+        type:String,
+        require:true,
+        min:5,
+        validate:'@'
+    },
+    jobId:{
         type:Number,
         require:true,
-        min:10,
+        min:10
     },
     PhoneNo:{
         type:Number,
