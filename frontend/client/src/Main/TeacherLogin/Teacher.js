@@ -2,10 +2,11 @@ import React,{useState} from 'react';
 import './Teacher.css';
 import Button from '@mui/material/Button';
 import axiosinstance from '../../utilities/axios';
+import { Link } from 'react-router-dom';
 
 
 const Teacher = ()=>{
-       const [teacher,setStudent] = useState({
+       const [teacher,setTeacher] = useState({
            name:"",
            email:"",
            PhoneNo:"",
@@ -16,7 +17,7 @@ const Teacher = ()=>{
 
        const handleChange = (e)=>{  
             const {name , value} = e.target;
-            setStudent({
+            setTeacher({
                 ...teacher,
                   [name]: value
             })
@@ -28,7 +29,7 @@ const Teacher = ()=>{
 
         if(name && email && PhoneNo && jobId && Password){
             const data = { name , email, PhoneNo,jobId , Password};
-            axiosinstance.post('/student/login',data).then(res=>{
+            axiosinstance.post('/teacher/login',data).then(res=>{
                alert(res.data.message);
             });
         }else{
@@ -41,7 +42,7 @@ const Teacher = ()=>{
         <>
            <div className='container'>
         <form>
-            <h2>Teacher LOGIN</h2>
+            <h2>Teacher Login</h2>
             <label>Name:</label>
             <input className='input form-input' name='name' onChange={handleChange} value={teacher.name} id=''/><br/>
             <label>Email:</label>
@@ -57,6 +58,10 @@ const Teacher = ()=>{
             <input className='input form-input' type="password" name='Password' onChange={handleChange} value={teacher.Password} id=''/><br/>
             <Button onClick={Submit} variant="outlined" color="error">Submit</Button>
             </form>   
+
+            <div>
+                For a login Click here <Link to="/register/teacher">Register</Link>
+            </div>
            </div>
         </>
     )

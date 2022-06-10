@@ -11,7 +11,6 @@ const Schema =new mongoose.Schema({
         type:String,
         require:true,
         min:5,
-        validate:'@'
     },
     jobId:{
         type:Number,
@@ -21,7 +20,7 @@ const Schema =new mongoose.Schema({
     PhoneNo:{
         type:Number,
         require:true,
-        max:12,
+        min:10,
     },
     Password:{
         type:String,
