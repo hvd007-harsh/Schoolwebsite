@@ -46,3 +46,5 @@ I make simple login for teacher UI and fix the axios error by making seperate ba
 and make a validator which will define it is email and password 
 commit "fifth"
 see you in next portion
+10/06/2022
+I made one validation for user entry then trim all the options and write all the code for saving teacher data now this teacher data can write the data of student and after making the working of teacher and student database I will create one room where a student can chat under chatroom Next I will made the student banking system where student will submit the fee of tution and other things and create one chat of student where student  can chat in there classroom 
