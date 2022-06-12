@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import './Teacher.css';
 import Button from '@mui/material/Button';
 import axiosinstance from '../../utilities/axios';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
-
-const Teacher = ()=>{
+const Teacher = (props)=>{
+       const navigate = useNavigate();
        const [teacher,setTeacher] = useState({
            name:"",
            email:"",
@@ -25,12 +25,15 @@ const Teacher = ()=>{
 
 
        const Submit = () =>{
-           const {name , email, PhoneNo ,jobId , Password} = teacher;
+           const {email,jobId,Password} = teacher;
 
-        if(name && email && PhoneNo && jobId && Password){
-            const data = { name , email, PhoneNo,jobId , Password};
+        if(email && jobId && Password){
+            const data = {email,jobId,Password};
             axiosinstance.post('/teacher/login',data).then(res=>{
-               alert(res.data.message);
+               console.log(res.data);
+              alert(res.data.message);
+              props.setTeacher(res.data.isAuth);
+              navigate("/dashboard");
             });
         }else{
             alert("Please enter the data");
@@ -43,19 +46,15 @@ const Teacher = ()=>{
            <div className='container'>
         <form>
             <h2>Teacher Login</h2>
-            <label>Name:</label>
-            <input className='input form-input' name='name' onChange={handleChange} value={teacher.name} id=''/><br/>
+        
             <label>Email:</label>
-            <input className='input form-input' name='email' onChange={handleChange} value={teacher.email} id=''/><br/>
-            
-            <label>PhoneNo:</label>
-            <input className='input form-input' name='PhoneNo' onChange={handleChange} value={teacher.PhoneNo} id=''/><br/>
-            
+            <input className='input form-input' name='email' onChange={handleChange} value={teacher.email} /><br/>
+           
             <label>JobId:</label>
-            <input className='input form-input' name='jobId' onChange={handleChange} value={teacher.jobId} id=''/><br/>
+            <input className='input form-input' name='jobId' onChange={handleChange} value={teacher.jobId}/><br/>
             
             <label>Password:</label>
-            <input className='input form-input' type="password" name='Password' onChange={handleChange} value={teacher.Password} id=''/><br/>
+            <input className='input form-input' type="password" name='Password' onChange={handleChange} value={teacher.Password}/><br/>
             <Button onClick={Submit} variant="outlined" color="error">Submit</Button>
             </form>   
 

@@ -35,7 +35,7 @@ const TeacherRegister = ()=>{
     }
     else
     {
-     alert("Please enter the data");
+     alert("Please enter the data or password is not match");
     }
 }
     return(
