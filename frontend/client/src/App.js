@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './App.css';
 import {BrowserRouter as Router} from "react-router-dom";
 import {Routes,Route,Navigate } from "react-router-dom";
@@ -14,8 +14,13 @@ import TeacherDashboard from './Main/Dashboard/TeacherDashboard';
 import Header from './Header/Header';
 
 function App() {
- const [teacher, setTeacher] = useState()
-  return (
+  const [ teacher, setTeacher] = useState();
+  
+  useEffect(()=>{
+    setTeacher(window.localStorage.getItem("teacherlogged"));
+  },[]);
+
+ return (
 
   <Router history={history}>
  <Header />
@@ -25,11 +30,9 @@ function App() {
    <Route path="/principle" element={<Principle/> } />
    <Route path='/login' element={<Login/>} />
    <Route path='/login/student' element={<StudentLogin/>} />
-   <Route path='/login/teacher' element={teacher ? <Navigate to="/dashboard"/> :<Teacher  setTeacher={setTeacher} />} />
+   <Route path='/login/teacher' element={teacher ? <Navigate to="/dashboard"/> : <Teacher /> } />
    <Route path='/register/teacher' element={<TeacherRegister/>}/>
-   <Route path='/dashboard' element={teacher ? <TeacherDashboard  setTeacher={setTeacher} /> : <Navigate to="/login/teacher"/>} />
-
-   setTeacher={setTeacher}
+   <Route path='/dashboard/*' element={teacher ? <TeacherDashboard /> : <Navigate to="/login/teacher"/>} />
 
    <Route path='*' element={
      <h1 style={{color:"black", fontSize:"large" , align:"centre"}}>

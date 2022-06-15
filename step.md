@@ -48,3 +48,15 @@ commit "fifth"
 see you in next portion
 10/06/2022
 I made one validation for user entry then trim all the options and write all the code for saving teacher data now this teacher data can write the data of student and after making the working of teacher and student database I will create one room where a student can chat under chatroom Next I will made the student banking system where student will submit the fee of tution and other things and create one chat of student where student  can chat in there classroom 
+11/06/2022
+I work one making dashboard of teacher and I make login system for the teacher where he can only enter 
+in the website when he have jobId and credential 
+
+12/06/2022 I changes the react router function to give wonderfull login routing and I have to remove the refresh state in which once it get set then again it never come to reset 
+
+
+14/06/2022 Today I will make dashboard and I will solve the issue of getting refresh stay
+that's all 
+
+15/06/2022 Let's make UI of dashboard and make registration for student After it we will make student dashboard 
+

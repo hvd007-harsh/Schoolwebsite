@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import axiosinstance from '../../utilities/axios';
 import { Link,useNavigate } from 'react-router-dom';
 
-const Teacher = (props)=>{
+const Teacher = ()=>{
        const navigate = useNavigate();
        const [teacher,setTeacher] = useState({
            name:"",
@@ -31,13 +31,12 @@ const Teacher = (props)=>{
             const data = {email,jobId,Password};
             axiosinstance.post('/teacher/login',data).then(res=>{
                console.log(res.data);
-              alert(res.data.message);
-              props.setTeacher(res.data.isAuth);
-              navigate("/dashboard");
+              window.localStorage.setItem("teacherlogged",res.data.isAuth);
             });
         }else{
             alert("Please enter the data");
        }
+       navigate("/dashboard");
        }
 
 

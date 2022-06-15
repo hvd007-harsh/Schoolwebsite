@@ -58,7 +58,8 @@ route.post("/login",(req,res)=>{
             
            if( check && data_Teacher.jobId == jobId){
             console.log(data_Teacher.jobId);
-                res.send({isAuth: true, message:"Successfully Logged In"})
+                res.send({isAuth: true, message:"Successfully Logged In"});
+                req.session.isAuth = true;
            } 
         }
     })  

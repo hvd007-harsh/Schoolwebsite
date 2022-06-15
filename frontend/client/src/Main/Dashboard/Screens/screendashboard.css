@@ -1,0 +1,9 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2.9fr;
+    grid-template-rows: 1fr 2.6fr;
+    gap: 0px 0px;
+    grid-template-areas:"sidenav classroom";
+}
+.sidenav{ grid-area: sidenav; }
+.classroom{ grid-area:classroom;}
