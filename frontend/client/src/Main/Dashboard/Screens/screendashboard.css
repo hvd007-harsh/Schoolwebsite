@@ -7,3 +7,15 @@
 }
 .sidenav{ grid-area: sidenav; }
 .classroom{ grid-area:classroom;}
+.btn{
+    border: 2px solid red;
+    background-color: navy;
+}
+
+.registerContainer{
+    display:flex;
+    flex-flow:column;
+    max-width: 50%;
+    justify-content: center;
+    text-align: center;
+}

@@ -2,6 +2,10 @@ import { Button } from '@mui/material';
 import React from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Classroom from './Screens/Classroom';
+import Student from './Screens/Student';
+import RegisterStudent from './Screens/RegisterStudent';
+import Data from './Screens/Data';
+import Report from './Screens/Report';
 import './TeacherDashboard.css';
 
 
@@ -24,10 +28,10 @@ const TeacherDashboard = () =>{
       </div> 
       <Routes>
           <Route path="classroom" element={<Classroom/>}/>
-          <Route path="student" element={<Classroom/>}/>
-          <Route path="registerStudent" element={<Classroom/>}/>
-          <Route path="report" element={<Classroom/>}/>
-          <Route path="data" element={<Classroom/>}/>
+          <Route path="student" element={<Student/>}/>
+          <Route path="registerStudent" element={<RegisterStudent/>}/>
+          <Route path="report" element={<Report/>}/>
+          <Route path="data" element={<Data/>}/>
 
       </Routes> 
     </div>)
