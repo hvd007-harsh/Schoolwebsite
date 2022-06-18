@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import axiosinstance from '../../utilities/axios';
 import { Link,useNavigate } from 'react-router-dom';
 
-const Teacher = ()=>{
+const Teacher = (props)=>{
        const navigate = useNavigate();
        const [teacher,setTeacher] = useState({
            name:"",
@@ -29,20 +29,25 @@ const Teacher = ()=>{
 
         if(email && jobId && Password){
             const data = {email,jobId,Password};
-            axiosinstance.post('/teacher/login',data).then(res=>{
-               console.log(res.data);
+         try{   axiosinstance.post('/teacher/login',data).then(res=>{
+               console.log(res.data.id);
               window.localStorage.setItem("teacherlogged",res.data.isAuth);
+              window.localStorage.setItem("id",res.data.id);
+              navigate("/dashboard/"+res.data.id+"/");
             });
+            }catch(err){
+                console.log(err);
+            }
         }else{
             alert("Please enter the data");
        }
-       navigate("/dashboard");
+
        }
 
 
     return(
         <>
-           <div className='container'>
+           <div className='form'>
         <form>
             <h2>Teacher Login</h2>
         

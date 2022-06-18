@@ -1,18 +1,20 @@
 const mongoose = require('mongoose');
-
-const Schema =new mongoose.Schema({
-      student_Name:{
+const student =new mongoose.Schema({
+      name:{
           type:String,
           require:true
       },
-      father_Name:{
+      fatherName:{
            type:String,
            require:true
       },
-      roll_No:{
+      rollNo:{
            type:Number,
-           require:true,
-           max:7   
+           require:true,   
+      },
+      teacher:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'teacher',
       },
       course:{
           type:String,
@@ -24,4 +26,4 @@ const Schema =new mongoose.Schema({
       }
 
 })
-module.exports  = new mongoose.model('Student',Schema);
+module.exports  = new mongoose.model('student',student);

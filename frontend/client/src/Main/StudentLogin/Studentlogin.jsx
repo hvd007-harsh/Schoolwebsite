@@ -39,7 +39,7 @@ const StudentLogin = ()=>{
 
     return(
         <>
-           <div className='container'>
+           <div className='form'>
         <form>
             <h2>STUDENT LOGIN</h2>
             <label>Name:</label>

@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Button from "@mui/material/Button";
 import "./screendashboard.css";
 import axiosinstance from '../../../utilities/axios';
-const RegisterStudent = ()=>{
+const RegisterStudent = (props)=>{
     const [student,setStudent]= useState({
         name:"",
         fatherName:"",
@@ -19,7 +19,8 @@ const RegisterStudent = ()=>{
     const Submit=()=>{
         const {name , fatherName, rollNo ,course , classroom} = student;
         if(name && fatherName && rollNo && course && classroom){
-            const student = { name , fatherName, rollNo, course, classroom};
+            let student = { name , fatherName, rollNo, course, classroom};
+            student.teacher = props.id;
             axiosinstance.post('/student/register',student).then(res=>{
                alert(res.data.message);
             });

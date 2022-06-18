@@ -40,7 +40,7 @@ const TeacherRegister = ()=>{
 }
     return(
         <>
-            <div>
+            <div className="form">
                <h3> REGISTRATION FOR TEACHER'S</h3>
             </div>
             <form>

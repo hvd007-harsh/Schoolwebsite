@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate ,useParams} from 'react-router-dom';
 import Classroom from './Screens/Classroom';
 import Student from './Screens/Student';
 import RegisterStudent from './Screens/RegisterStudent';
@@ -11,6 +11,7 @@ import './TeacherDashboard.css';
 
 
 const TeacherDashboard = () =>{
+    const id = useParams();
     const navigate = useNavigate();
     const Change= ()=>{
        window.localStorage.removeItem("teacherlogged"); 
@@ -29,7 +30,7 @@ const TeacherDashboard = () =>{
       <Routes>
           <Route path="classroom" element={<Classroom/>}/>
           <Route path="student" element={<Student/>}/>
-          <Route path="registerStudent" element={<RegisterStudent/>}/>
+          <Route path="registerStudent" element={<RegisterStudent id={id.id} />}/>
           <Route path="report" element={<Report/>}/>
           <Route path="data" element={<Data/>}/>
 
