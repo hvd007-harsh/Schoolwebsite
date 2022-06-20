@@ -60,3 +60,5 @@ that's all
 
 15/06/2022 Let's make UI of dashboard and make registration for student After it we will make student dashboard 
 
+20/06/2022 Today I will make login for student and student dashboard and the stuff of student and I will make a student list in which they are in table and row and coloumn and they have stuff of edit and update them as a teacher 
+and I will make student messaging next where student can message there classmates acording to there person 

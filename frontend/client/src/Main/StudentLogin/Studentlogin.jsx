@@ -2,9 +2,11 @@ import React,{useState} from 'react';
 import './StudentLogin.css';
 import Button from '@mui/material/Button';
 import axiosinstance from '../../utilities/axios';
-
+import {useNavigate} from 'react-router-dom';
 
 const StudentLogin = ()=>{
+
+    const navigate = useNavigate();
        const [student,setStudent] = useState({
            name:"",
            fatherName:"",
@@ -30,7 +32,11 @@ const StudentLogin = ()=>{
             const data = { name , fatherName, rollNo, course, classroom};
             axiosinstance.post('/student/login',data).then(res=>{
                alert(res.data.message);
-            });
+               const student = res.data.student;
+               window.localStorage.setItem("student",student);
+               window.localStorage.setItem("studentId",student);
+               navigate("/studentdashboard/"+student+"/");
+       });
         }else{
             alert("Please enter the data");
        }

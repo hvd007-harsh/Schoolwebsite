@@ -12,13 +12,29 @@ import Teacher from "../src/Main/TeacherLogin/Teacher";
 import TeacherRegister from "./Main/TeacherRegister/TeacherRegistration";
 import TeacherDashboard from "./Main/Dashboard/TeacherDashboard";
 import Header from "./Header/Header";
+import StudentDashboard from "./Main/Dashboard/StudentDashboard/StudentDashboard";
 
 function App() {
   const [teacher, setTeacher] = useState();
+  const [student,setStudent] = useState();
   const id = window.localStorage.getItem("id");
-  const path = generatePath("/dashboard/:id/",{id});
-
+  const studentId = window.localStorage.getItem("studentId");
+  const path = ()=>{
+  if(id){ 
+    return generatePath("/dashboard/:id/",{id}) 
+  }else{
+     return "";
+  }
+};
+  const path1 = ()=>{
+  if(studentId){  
+   return generatePath("/studentdashboard/:studentId/",{studentId})
+  }else{
+    return""
+  }
+}
   useEffect(() => {
+    setStudent(window.localStorage.getItem("student"));
     setTeacher(window.localStorage.getItem("teacherlogged"));
   }, []);
 
@@ -31,8 +47,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/principle" element={<Principle />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/login/student" element={<StudentLogin />} />
-        <Route path="/login/teacher" element={teacher ? <Navigate to={path}/>:<Teacher />} />
+        <Route path="/login/student" element={student ? <Navigate to={path1()}/>:<StudentLogin />} />
+        <Route path="/studentdashboard/:studentId/*" element = {<StudentDashboard/> }/>
+        <Route path="/login/teacher" element={teacher ? <Navigate to={path()}/>:<Teacher />} />
         <Route path="/dashboard/:id/*" element={<TeacherDashboard />} />
         <Route path="/register/teacher" element={<TeacherRegister />} />
 
