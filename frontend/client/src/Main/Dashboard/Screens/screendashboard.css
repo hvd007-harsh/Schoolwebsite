@@ -6,7 +6,30 @@
     grid-template-areas:"sidenav classroom";
 }
 .sidenav{ grid-area: sidenav; }
-.classroom{ grid-area:classroom;}
+.classroom{
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: 20px;
+    grid-template-columns: 1fr 2.7fr 1.1fr;
+    grid-template-rows: 1.3fr 2.9fr 0.5fr;
+    grid-area:classroom;
+}
+.Member{ grid-area: 1/1/4/2;
+background-color: #778899; }
+.Message{ grid-area: 1/2/4/4;
+    background-color: #778899; }
+.Text-area{
+    justify-content: center;
+    text-align: center;
+    grid-area: 3/2/4/4; 
+    background-color: #d6d7d7;}
+.profile-view{
+    grid-area:1/2/2/4; 
+    display: flex;
+    background-color: #0162c3;
+    justify-content: right;
+}
+
 .btn{
     border: 2px solid red;
     background-color: navy;
@@ -18,4 +41,17 @@
     max-width: 50%;
     justify-content: center;
     text-align: center;
+}
+
+.message{
+    display: flex;
+    justify-content: baseline;
+    height: 50%;
+    width: 500px;
+    border:2px solid black;
+    color: #ef0012;
+    text-align: bottom;
+}
+.Text-area:hover{
+    text-shadow: 2px 2px 4px #737fff;
 }

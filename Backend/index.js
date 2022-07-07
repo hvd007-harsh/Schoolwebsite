@@ -5,6 +5,9 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const db = require('./db/db');
 const dotenv = require('dotenv');
+const message = require('./model/message');
+
+
 dotenv.config();
 
 const app = express();
@@ -23,6 +26,14 @@ app.use(session({
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 db;
+
+const httpServer = require("http").createServer(app);
+
+const io = require("socket.io")(httpServer)
+
+io.on('connection',(socket)=>{
+    console.log('New connection'+socket.id);
+})
 
 app.use('/student',require('./route/student'));
 app.use('/teacher',require('./route/teacher'));
