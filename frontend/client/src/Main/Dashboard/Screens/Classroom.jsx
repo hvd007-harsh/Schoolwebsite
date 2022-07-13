@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import class_data from "../../../data/class_data";
 import { Button} from "@mui/material";
+import {useParams}  from 'react-router-dom';
 
 import "./screendashboard.css";
 import { Chat } from "./Chat/Chat";
 const Classroom = () => {
+  const params = useParams();
+   console.log(params);
   const [classname, setClassname] = useState("");
   const handleChange = (event) => {
     const { value } = event.target;
@@ -32,7 +35,7 @@ const Classroom = () => {
             Submit
           </Button>
         </div>
-        <Chat/>
+        <Chat userId={params.studentId}/>
         {class_data.map((element) => {
             return <h3>{element}</h3>;
           })}

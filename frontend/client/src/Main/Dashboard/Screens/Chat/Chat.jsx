@@ -3,22 +3,25 @@ import { TextareaAutosize, Button} from "@mui/material";
 import socketIO from "socket.io-client";
 let ENDPOINT = "http://localhost:5000/";
 let socket;
+let userId;
 
-export const Chat = () => {
+export const Chat = (props) => {
+  console.log(props.userId);
+  userId = props.userId;
+  socket = socketIO(ENDPOINT,{ transports:['websocket']});
 useEffect(() => {
-  socket = socketIO(ENDPOINT,{transports:['websocket']});
+
+  console.log(socket);
   socket.on("connect",()=>{
        alert("Connected");
   })  
-
-
+  socket.emit("joined",{userId});
   return () => {
-   
+      socket.emit('disconnection');
+      socket.off();
   }
 }, [])
 
-
-console.log(socket);
 
   return (
     <div>

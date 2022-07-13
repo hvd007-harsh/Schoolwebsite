@@ -62,3 +62,9 @@ that's all
 
 20/06/2022 Today I will make login for student and student dashboard and the stuff of student and I will make a student list in which they are in table and row and coloumn and they have stuff of edit and update them as a teacher 
 and I will make student messaging next where student can message there classmates acording to there person 
+
+12/07/2022 Today Let's work on messaging Let's intialize the app with SocketIO
+and see the printing message 
+-- NODEJS enivorment setup socketio 
+--ReactJS enivorment setup socketio-client 
+-- INITIALIZE ALL THE PART AND SETUP And set the enivorment 

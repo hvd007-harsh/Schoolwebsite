@@ -1,17 +1,22 @@
 const express = require('express');
-const bodyparser = require('body-parser');
 const cors = require('cors');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const db = require('./db/db');
 const dotenv = require('dotenv');
-const message = require('./model/message');
+const socketIO = require('socket.io');
+const http = require('http');
+
+
+let socketio;
 
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
+const server = http.createServer(app);
+
 app.use(cors());
 app.use(session({
     name: 'Student',
@@ -27,17 +32,36 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 db;
 
-const httpServer = require("http").createServer(app);
 
-const io = require("socket.io")(httpServer)
+const io = socketIO(server);
 
+// // // Assign socket object to every request
 io.on('connection',(socket)=>{
-    console.log('New connection'+socket.id);
+    console.log('New connection');
+    console.log(socket.id);
+//   console.log(socket.handshake);
+//   console.log(socket.rooms);
+//   console.log(socket.data);
+let Id = data.userId;
+  socket.on("joined",(data)=>{
+    console.log(data.userId);
+  })
+  
+  socket.on("disconnection",()=>{
+    console.log("Userleft");
+  })
+   
 })
 
+
+
+
+app.set("socketio",socketio);
+
+
+app.use('/message',require('./route/message'));
 app.use('/student',require('./route/student'));
 app.use('/teacher',require('./route/teacher'));
-app.listen(PORT,()=>{
-    console.log(`Server is running ${PORT}`);
+server.listen(PORT,()=>{
+    console.log(`Server is listening on PORT: ${PORT}`)
 })
-
