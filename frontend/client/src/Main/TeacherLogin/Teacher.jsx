@@ -29,8 +29,10 @@ const Teacher = (props)=>{
 
         if(email && jobId && Password){
             const data = {email,jobId,Password};
-         try{   axiosinstance.post('/teacher/login',data).then(res=>{
-               console.log(res.data.id);
+         try{  
+              axiosinstance.post('/teacher/login',data).then(res=>{
+            console.log(res.data.id);
+              window.localStorage.setItem("name",res.data.name);
               window.localStorage.setItem("teacherlogged",res.data.isAuth);
               window.localStorage.setItem("id",res.data.id);
               navigate("/dashboard/"+res.data.id+"/");

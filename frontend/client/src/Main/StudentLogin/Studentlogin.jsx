@@ -32,7 +32,9 @@ const StudentLogin = ()=>{
             const data = { name , fatherName, rollNo, course, classroom};
             axiosinstance.post('/student/login',data).then(res=>{
                alert(res.data.message);
+               const name = res.data.name;
                const student = res.data.student;
+               window.localStorage.setItem("name",name);
                window.localStorage.setItem("student",student);
                window.localStorage.setItem("studentId",student);
                navigate("/studentdashboard/"+student+"/");

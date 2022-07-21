@@ -7,29 +7,41 @@
 }
 .sidenav{ grid-area: sidenav; }
 .classroom{
-    display: grid;
-    grid-auto-columns: 1fr;
-    gap: 20px;
-    grid-template-columns: 1fr 2.7fr 1.1fr;
-    grid-template-rows: 1.3fr 2.9fr 0.5fr;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1.5fr 0.5fr; 
+    grid-template-rows: 0.6fr 1.4fr 1.1fr 0.9fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "member Profile Profile ."
+      "member message message ."
+      "member message message ."
+      "member textarea textarea ."; 
     grid-area:classroom;
 }
-.Member{ grid-area: 1/1/4/2;
-background-color: #778899; }
-.Message{ grid-area: 1/2/4/4;
-    background-color: #778899; }
+.Member{
+grid-area: member; 
+background-color: #3e3e3e; 
+}
+.Message{ 
+    grid-area: message;
+    background-color: #778899; 
+}
 .Text-area{
     justify-content: center;
     text-align: center;
-    grid-area: 3/2/4/4; 
-    background-color: #d6d7d7;}
+    grid-area: textarea; 
+    background-color: #d6d7d7;
+}
 .profile-view{
-    grid-area:1/2/2/4; 
+    grid-area: Profile; 
     display: flex;
     background-color: #0162c3;
     justify-content: right;
 }
-
+.chatbox{
+    border:0.2vmax solid black;
+    height: 70%;
+}
 .btn{
     border: 2px solid red;
     background-color: navy;

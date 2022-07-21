@@ -56,6 +56,7 @@ route.post("/login", (req, res) => {
           console.log(data_Teacher.jobId);
           res.send({
             isAuth: true,
+            name: data_Teacher.name,
             id: data_Teacher.id,
             message: "Successfully Logged In",
           });

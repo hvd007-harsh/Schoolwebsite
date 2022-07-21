@@ -16,7 +16,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 const server = http.createServer(app);
-
+const users = [{}]
 app.use(cors());
 app.use(session({
     name: 'Student',
@@ -42,12 +42,18 @@ io.on('connection',(socket)=>{
 //   console.log(socket.handshake);
 //   console.log(socket.rooms);
 //   console.log(socket.data);
-let Id = data.userId;
   socket.on("joined",(data)=>{
-    console.log(data.userId);
+    users[socket.id]= data.user;
+    console.log(`${data.user} has Joined`);
+    socket.emit('welcome',{user:"Admin",message:`Welcome to the chat new user`});
+    socket.broadcast.emit("userjoined",{user:"Admin",message:`new user has joined`});
   })
-  
-  socket.on("disconnection",()=>{
+
+  socket.on("message",({message,id})=>{
+    io.emit('sendmessage',{user:users[id],message,id})
+  })
+  socket.on("disconnected",()=>{
+    socket.broadcast.emit('leave',{message:"User left"});
     console.log("Userleft");
   })
    
