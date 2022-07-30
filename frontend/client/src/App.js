@@ -13,6 +13,7 @@ import TeacherRegister from "./Main/TeacherRegister/TeacherRegistration";
 import TeacherDashboard from "./Main/Dashboard/TeacherDashboard";
 import Header from "./Header/Header";
 import StudentDashboard from "./Main/Dashboard/StudentDashboard/StudentDashboard";
+import Footer from "./Footer/Footer";
 
 function App() {
   const [teacher, setTeacher] = useState();
@@ -68,6 +69,7 @@ function App() {
           render={(props) => <Header {...props} />}
         ></Route>
       </Routes>
+            <Footer />
     </Router>
   );
 }

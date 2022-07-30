@@ -1,0 +1,17 @@
+.footer{
+    font: 200;
+    font-family: sans-serif;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+ul{
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+}
