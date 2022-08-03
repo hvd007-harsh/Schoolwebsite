@@ -1,0 +1,9 @@
+.largetext{
+    overflow: scroll;
+}
+.Trophies{
+    display: flex;
+    justify-content: space-around;
+    float: left;
+    gap: 20px;
+}

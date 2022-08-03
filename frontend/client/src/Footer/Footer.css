@@ -2,10 +2,12 @@
     font: 200;
     font-family: sans-serif;
     border: 2px solid black;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    position: fixed;
+    background-color: rgb(50, 48, 48);
+    color: rgb(169, 163, 163);
+    margin-top: 30em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -14,4 +16,8 @@ ul{
 }
 li{
     text-decoration: none;
+}
+h5{
+    width: 100%;
+    text-align: center;
 }

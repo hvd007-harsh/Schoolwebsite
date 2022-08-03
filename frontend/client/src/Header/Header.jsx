@@ -50,7 +50,7 @@ const Header = () => {
             <Link className="removebar" to="/history">
             <Tab value={value}  label="History And Achievements"/>
             </Link>
-            <Link className="removebar" to="/classroom">
+            <Link className="removebar" to="/gallery">
             <Tab value={value}  label="Classroom Gallery"/>
             </Link>
             <Link className="removebar" to="/labroom">
@@ -59,10 +59,10 @@ const Header = () => {
             <Link className="removebar" to="/library">
             <Tab value={value}  label="Library Gallery"/>
             </Link>
-            <Link className="removebar" to="/events">
+            <Link className="removebar" to="/event">
             <Tab value={value}  label="Events And Exhibition"/>
             </Link>
-            <Link className="removebar" to="/pressrelease">
+            <Link className="removebar" to="/press">
             <Tab value={value}  label="Press Released"/>
             </Link>
           </Tabs>

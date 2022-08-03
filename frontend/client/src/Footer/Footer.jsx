@@ -6,7 +6,7 @@ import "./Footer.css";
 const Footer =()=>{ 
     return (
     <div className="footer">
-        <h1 >Footer</h1>
+        <h5>ALL RIGHTS RESERVED @2022</h5> 
         <ul>
             <li>
                <FontAwesomeIcon icon={faTwitter} />

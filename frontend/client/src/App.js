@@ -14,6 +14,12 @@ import TeacherDashboard from "./Main/Dashboard/TeacherDashboard";
 import Header from "./Header/Header";
 import StudentDashboard from "./Main/Dashboard/StudentDashboard/StudentDashboard";
 import Footer from "./Footer/Footer";
+import { History}  from "./Main/History";
+import { Gallery} from "./Main/Gallery";
+import { Library}  from "./Main/Library";
+import { Press  }from "./Main/Press";
+import { Labroom} from "./Main/Labroom";
+import { Event } from "./Main/Event";
 
 function App() {
   const [teacher, setTeacher] = useState();
@@ -41,12 +47,20 @@ function App() {
 
 
   return (
+    <>
     <Router history={history}>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/principle" element={<Principle />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/labroom" element={<Labroom />} />
+        <Route path="/press" element={<Press/>} />
+        <Route path="/event" element={<Event/>} />  
+
         <Route path="/login" element={<Login />} />
         <Route path="/login/student" element={student ? <Navigate to={path1()}/>:<StudentLogin />} />
         <Route path="/studentdashboard/:studentId/*" element = {<StudentDashboard/> }/>
@@ -69,8 +83,9 @@ function App() {
           render={(props) => <Header {...props} />}
         ></Route>
       </Routes>
-            <Footer />
     </Router>
+    <Footer />
+    </>
   );
 }
 

@@ -6,7 +6,6 @@ import {Carousel} from "react-responsive-carousel";
 const Home =()=>{ return (
     <div>
         <h1>Home</h1>
-      <div>
         <Carousel>
             <div>
                 <img  src={data.Home[0].img1} alt="LIBRARY" />
@@ -25,7 +24,6 @@ const Home =()=>{ return (
                 <p className="legend">SCIENCE</p>
             </div>
         </Carousel>
-      </div>
     </div>
 
 )};

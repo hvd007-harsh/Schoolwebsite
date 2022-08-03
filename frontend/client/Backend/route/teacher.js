@@ -1,7 +1,7 @@
 const express = require("express");
 const teacher = require("../model/teacher");
 const validate = require("../utils/validate");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const route = express.Router();
 const saltround = 10;
