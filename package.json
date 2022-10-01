@@ -5,7 +5,7 @@
   "engines":{
        "npm":"7.x",
        "node":"18.x"
-  }
+  },
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
