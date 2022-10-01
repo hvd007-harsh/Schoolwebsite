@@ -1,0 +1,38 @@
+.footer{
+    font: 200;
+    font-family: sans-serif;
+    border: 2px solid black;
+    background-color: rgb(50, 48, 48);
+    color: rgb(169, 163, 163);
+    margin-top: 30em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+ul{
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+}
+h5{
+    width: 100%;
+    text-align: center;
+}
+.twitter:hover ,.facebook:hover,.instagram:hover,.youtube:hover{
+    transform: scale(3);
+}
+.twitter:hover{
+  color: #4eeeee;
+}
+.facebook:hover{
+    color: #1109ff;
+}
+.instagram:hover{
+    color: #ee11b7;
+}
+.youtube:hover{
+   color: #ff2233;
+}
